@@ -1,0 +1,436 @@
+// css en commun
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    margin: 3.5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 3rem grey;
+
+}
+
+
+// fin des css communs
+
+// navbar
+.navbar-icon{
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: white;
+    flex-direction: column;
+    cursor: pointer;
+    
+}
+
+.open-navbar-icon{
+    position: fixed;
+    top: 6.5rem;
+    left: 6.5rem;
+    z-index: 200;
+}
+
+.navbar-icon .line{
+    height: .5rem;
+    width: 4.5rem;
+    background-color: rgb(177, 0, 0);
+}
+
+.open-navbar-icon .line{
+    margin: .3rem 0;
+}
+
+.navbar-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    opacity: 0;
+    z-index: 300;
+    padding: 3.5rem;
+    transition: bottome .5s opacity .2s;
+}
+
+.change .navbar-wrapper{
+    bottom: 0;
+    opacity: 1;
+    transition: bottom 0.5s, opacity 0.2s 0.25s;
+}
+
+.navbar{
+    width: 100% ;
+    height: 100%;
+    // background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.3));
+    // background-size: cover;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.close-navbar-icon{
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
+    z-index: 300;
+
+}
+
+.close-navbar-icon .line{
+    position: absolute;
+
+}
+
+.line-1{
+    transform: rotate(40deg);
+}
+
+.line-2{
+    transform: rotate(-40deg);
+}
+
+.nav-list{
+    height: 100%;
+    display: flex;
+}
+.nav-link{
+font-size: 3rem;
+font-weight: 700;
+color: white;
+text-transform: uppercase;
+
+width: 100%;
+opacity: 0.8;
+position: relative;
+top: -100%;
+transition: all .3s ;
+}
+
+.change .nav-link{
+    top: 0;
+}
+
+.nav-link:hover{
+    opacity: 1;
+    
+}
+.change .nav-link:nth-child(1) {
+    transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(2) {
+    transition: top 1s 0.6s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(3) {
+    transition: top 1s 0.8s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(4) {
+    transition: top 1s 1s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(5) {
+    transition: top 1s 1.2s, opacity 0.3s, color 0.3s;
+  }
+// end ofnavbar
+// header
+
+
+.header {
+    width: 100%;
+    height: calc(100vh - 7rem);
+    background-size: cover;
+    position: relative;
+    perspective: 100rem;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(0deg, #00000088 20%, #ffffff44 100%);
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: scale 15s;
+        opacity: .8;
+    }
+}
+
+
+
+@keyframes scale {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.banner {
+   
+    position: absolute;
+    bottom: clamp(10%, 1vw, 20%);
+     left: clamp(3%, 1vw, 20%);
+    animation: appear 2s ease-in-out ;
+    min-width: 100%;
+    text-align: center;
+    
+
+    
+    h1{
+        // outline: red solid 2px;
+        // padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Raleway', sans serif ;
+        color: #a00000;
+        text-transform: uppercase;
+        // margin-left: 2rem;
+    }
+    .prenom{
+        font-size: clamp(8.5rem, 15vw, 30rem);
+        letter-spacing: clamp(3rem, 6vw, 30rem);
+        font-weight: 600;    
+        
+    }
+    .nom_1, .nom_2{
+        font-size: clamp(2rem, 2vw, 10rem);
+        letter-spacing: clamp(1rem, 1vw, 10rem);
+        font-weight: 400;   
+        
+        // padding-left: 6rem;
+    }
+}
+
+@keyframes appear {
+
+    0%{
+        opacity: 0;
+        top: 170%
+    }
+    50%{
+        opacity: 0;
+        top: 60%
+    }
+    100%{
+        opacity: 1;
+        top: 55%;
+    }
+}
+
+// fin header
+
+
+@media (max-width: 768px){
+
+    // Commons css
+    .container {
+        margin: 0;
+        overflow: hidden;
+    }
+// end of common css
+
+    // navbar
+.navbar-icon{
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(177, 0, 0);
+    flex-direction: column;
+    cursor: pointer;
+    
+}
+
+.open-navbar-icon{
+    position: fixed;
+    top: 3.5rem;
+    left: 3.5rem;
+    z-index: 200;
+}
+
+.navbar-icon .line{
+    height: .2rem;
+    width: 2rem;
+    background-color: white;
+}
+
+.open-navbar-icon .line{
+    margin: .3rem 0;
+}
+
+.navbar-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ff1919b3;
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    opacity: 0;
+    z-index: 300;
+    padding: 3.5rem;
+    transition: bottome .5s opacity .2s;
+}
+
+.change .navbar-wrapper{
+    bottom: 0;
+    opacity: 1;
+    transition: bottom 0.5s, opacity 0.2s 0.25s;
+}
+
+.navbar{
+    width: 100% ;
+    height: 100%;
+    // background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.3));
+    // background-size: cover;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.close-navbar-icon{
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
+    z-index: 300;
+
+}
+
+.close-navbar-icon .line{
+    position: absolute;
+
+}
+
+.line-1{
+    transform: rotate(40deg);
+}
+
+.line-2{
+    transform: rotate(-40deg);
+}
+
+.nav-list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.nav-link{
+flex-grow: 1;
+}
+
+.change .nav-link{
+    top: 0;
+}
+
+.nav-link:hover{
+    opacity: 1;
+    
+}
+.change .nav-link:nth-child(1) {
+    transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(2) {
+    transition: top 1s 0.6s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(3) {
+    transition: top 1s 0.8s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(4) {
+    transition: top 1s 1s, opacity 0.3s, color 0.3s;
+  }
+  
+  .change .nav-link:nth-child(5) {
+    transition: top 1s 1.2s, opacity 0.3s, color 0.3s;
+  }
+// end ofnavbar
+h1{
+    
+    
+    font-family: 'Raleway', sans serif ;
+    color: #b10000;
+    text-transform: uppercase;
+    
+}
+// .banner {
+   
+//     position: absolute;
+//     top: 70%;
+//     left: 25%;
+//     animation: appear 2s ease-in-out ;
+//     max-width: 100%;
+//     h1{
+//         margin-block-start: 0;
+//         margin-block-end: 0;
+//         margin: 0;
+//         padding: 0;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center; 
+//         font-family: 'Raleway', sans serif ;
+//         color: #b10000;
+//         text-transform: uppercase;
+        
+        
+//     }
+//     .prenom{
+//         // font-size: 5rem;
+//         letter-spacing: 4rem;
+//         font-weight: 500;    
+        
+//     }
+//     .nom{
+//         font-size: 2rem;
+//         letter-spacing: 1rem;
+//         font-weight: 500;   
+//         padding: 0;
+//         margin: 0;
+
+// }
+// .nom_1{
+//     letter-spacing: 1.6rem;
+// }
+// }
+@keyframes appear {
+
+    0%{
+        opacity: 0;
+        top: 170%
+    }
+    50%{
+        opacity: 0;
+        top: 90%
+    }
+    100%{
+        opacity: 1;
+        top: 70%;
+    }
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    
+}
+}
+
